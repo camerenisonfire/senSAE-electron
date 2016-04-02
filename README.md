@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # electron-quick-start
 
 **Clone and run for a quick way to see an Electron in action.**
@@ -28,3 +29,7 @@ npm install && npm start
 Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).
 
 #### License [CC0 (Public Domain)](LICENSE.md)
+=======
+# senSAE-electron
+A light-weight music visualizer app built in Electron
+>>>>>>> 996543428b0d1cbd02c858d07c12ec43e225679f
