@@ -24,7 +24,7 @@ function draw() {
     // Get the overall volume (between 0 and 1.0)
     vol = mic.getLevel();
 
-    fill(0, 20);
+    fill(0, map(vol, 0, .2, 5, 20));
     //fill(random(0, 255),random(0, 255),random(0, 255), 30);
     rect(0, 0, width, height);
 
