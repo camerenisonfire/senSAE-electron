@@ -1,1 +1,4 @@
-Working on a port of senSAE(http://www.sensae.us/) to Electron in order to use web technologies to create visualizers. At this moment, it is just the electron-quick-start(http://electron.atom.io/docs/latest/tutorial/quick-start) plus a P5.JS sketch in order to test out <canvas> in Electron. 
+Working on a port of senSAE(http://www.sensae.us/) to Electron in order to use web technologies to create visualizers.
+
+Current status:
+One basic theme, all contained in sketch.js that draws circles and triangles based on the volume level.
