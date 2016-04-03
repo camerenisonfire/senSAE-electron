@@ -27,7 +27,7 @@ function draw() {
     drawText();
 
     fill(0, map(vol, 0, .2, 5, 20));
-    //fill(random(0, 255),random(0, 255),random(0, 255), 30);
+    //fill(random(0, 255),random(0, 255),random(0, 255), map(vol, 0, .4, 10, 60));
     rect(0, 0, width, height);
 
     if (vol > DRAW_THRESHOLD_TRIANGLE) drawTriangle();
