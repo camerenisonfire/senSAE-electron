@@ -4,11 +4,6 @@ var input;
 var analyzer;
 var vol;
 var count = 0;
-var img;
-
-function preload() {
-    img = loadImage("imgs/Test1.jpg")
-}
 
 function setup() {
   // uncomment this line to make the canvas the full size of the window
