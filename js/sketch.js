@@ -1,5 +1,5 @@
 const DRAW_THRESHOLD_TRIANGLE = .02;
-const DRAW_THRESHOLD_ELLIPSE = .012;
+const DRAW_THRESHOLD_ELLIPSE = .01;
 
 var input;
 var analyzer;
@@ -24,13 +24,40 @@ function draw() {
     // Get the overall volume (between 0 and 1.0)
     vol = mic.getLevel();
 
+    drawText();
+
     fill(0, map(vol, 0, .2, 5, 20));
     //fill(random(0, 255),random(0, 255),random(0, 255), 30);
     rect(0, 0, width, height);
 
     if (vol > DRAW_THRESHOLD_TRIANGLE) drawTriangle();
     if (vol > DRAW_THRESHOLD_ELLIPSE) drawEllipse();
+    if (vol > DRAW_THRESHOLD_ELLIPSE / 2) drawEllipse();
 
+}
+
+var textColor = 255;
+var changeColorDir;
+function drawText() {
+    push();
+
+    textSize(32);
+
+    if(textColor >= 255){
+        changeColorDir = -2
+    }else if(textColor <= 0){
+        changeColorDir = 2;
+    }
+    textColor += changeColorDir;
+
+    fill(0);
+    text("camerenisonfire", width*(2/3), height*(5/6));
+
+    fill(textColor);
+    text("camerenisonfire", width*(2/3), height*(5/6));
+
+
+    pop();
 }
 
 var red, green, blue;
@@ -43,7 +70,7 @@ function drawTriangle() {
     green = random(0, 255);
     blue = random(0, 255);
     stroke(red, green, blue);
-    strokeWeight(map(vol, 0, .1, 4, 18));
+    strokeWeight(map(vol, DRAW_THRESHOLD_TRIANGLE, .4, 4, 18));
 
     var p1 = createVector(getTriX(), getTriY());
     var p2 = createVector(getTriX(), getTriY());
@@ -77,7 +104,7 @@ function drawEllipse(){
     greenE = random(0, 255);
     blueE = random(0, 255);
     stroke(red, green, blue);
-    strokeWeight(map(vol, 0, 1, 8, 18));
+    strokeWeight(map(vol, DRAW_THRESHOLD_ELLIPSE, .4, 8, 18));
 
     var p1 = createVector(getTriX(), getTriY());
 
