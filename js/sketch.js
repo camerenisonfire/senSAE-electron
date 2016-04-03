@@ -1,5 +1,5 @@
-const DRAW_THRESHOLD_TRIANGLE = .02;
-const DRAW_THRESHOLD_ELLIPSE = .01;
+const DRAW_THRESHOLD_TRIANGLE = .04;
+const DRAW_THRESHOLD_ELLIPSE = .02;
 
 var input;
 var analyzer;
@@ -24,9 +24,9 @@ function draw() {
     // Get the overall volume (between 0 and 1.0)
     vol = mic.getLevel();
 
-    drawText();
+    //drawText();
 
-    fill(0, map(vol, 0, .2, 5, 20));
+    fill(0, map(vol, 0, .4, 10, 30));
     //fill(random(0, 255),random(0, 255),random(0, 255), map(vol, 0, .4, 10, 60));
     rect(0, 0, width, height);
 
