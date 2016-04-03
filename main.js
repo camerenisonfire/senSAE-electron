@@ -12,7 +12,13 @@ let mainWindow;
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1920, height: 1080, title: "sensSAE", fullscreen: true, webPreferences: {experimentalCanvasFeatures: true}});
+  mainWindow = new BrowserWindow({
+      width: 480,
+      height: 360,
+      title: "sensSAE",
+      webPreferences: {
+          experimentalCanvasFeatures: true
+      }});
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.html');
