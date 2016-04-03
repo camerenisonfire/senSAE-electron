@@ -13,8 +13,8 @@ let mainWindow;
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-      width: 480,
-      height: 360,
+      width: 720,
+      height: 480,
       title: "sensSAE",
       webPreferences: {
           experimentalCanvasFeatures: true

@@ -1,4 +1,5 @@
-const DRAW_THRESHOLD = .014;
+const DRAW_THRESHOLD_TRIANGLE = .02;
+const DRAW_THRESHOLD_ELLIPSE = .012;
 
 var input;
 var analyzer;
@@ -27,13 +28,9 @@ function draw() {
     //fill(random(0, 255),random(0, 255),random(0, 255), 30);
     rect(0, 0, width, height);
 
-    if (vol > .017) drawTriangle();
+    if (vol > DRAW_THRESHOLD_TRIANGLE) drawTriangle();
+    if (vol > DRAW_THRESHOLD_ELLIPSE) drawEllipse();
 
-
-    //count++;
-    //if(count > 30){
-        //noLoop();
-    //}
 }
 
 var red, green, blue;
@@ -45,9 +42,8 @@ function drawTriangle() {
     red = random(0, 255);
     green = random(0, 255);
     blue = random(0, 255);
-    console.log(red);
     stroke(red, green, blue);
-    strokeWeight(map(vol, 0, 1, 4, 18));
+    strokeWeight(map(vol, 0, .1, 4, 18));
 
     var p1 = createVector(getTriX(), getTriY());
     var p2 = createVector(getTriX(), getTriY());
@@ -71,4 +67,20 @@ function getTriPoints(){
     for(var i = 0; i < 3; i++){
         points[i] = new Array();
     }
+}
+
+var redE, greenE, blueE;
+function drawEllipse(){
+    //fill(random(0, 255),random(0, 255),random(0, 255), 100);
+    //stroke(255);
+    redE = random(0, 255);
+    greenE = random(0, 255);
+    blueE = random(0, 255);
+    stroke(red, green, blue);
+    strokeWeight(map(vol, 0, 1, 8, 18));
+
+    var p1 = createVector(getTriX(), getTriY());
+
+    var eSize = map(vol, 0, .4, 20, 80);
+    ellipse(p1.x, p1.y, eSize, eSize);
 }
