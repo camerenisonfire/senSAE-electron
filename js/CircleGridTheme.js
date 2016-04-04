@@ -6,6 +6,13 @@ function CircleGridTheme(){
     for(var i = 0; i < this.gridWidth; i++){        // Create 2D array that is gridWidth x gridWidth size
         this.grid[i] = new Array(this.gridWidth);
     }
+
+    this.fromColor = color(218, 165, 32);
+    this.toColor = color(72, 61, 139);
+    console.log(this.fromColor.color_array[0]);
+    this.colorDiffRed = (this.fromColor.color_array[0] - this.toColor.color_array[0]);
+    this.colorDiffGreen = (this.fromColor.color_array[1] - this.toColor.color_array[1]);
+    this.colorDiffBlue = (this.fromColor.color_array[2] - this.toColor.color_array[2]);
 }
 
 CircleGridTheme.prototype.render = function(){
@@ -13,7 +20,7 @@ CircleGridTheme.prototype.render = function(){
 
     push();
 
-    fill(0, map(vol, 0, .4, 10, 30));
+    fill(0, map(vol, 0, .4, 5, 20));
     rect(0, 0, width, height);
 
     for(i = 0; i < this.gridWidth; i++){
@@ -31,15 +38,21 @@ CircleGridTheme.prototype.render = function(){
 CircleGridTheme.prototype.drawGrid = function() {
     var widthSpacing = width / (this.gridWidth - 1);
     var heightSpacing = height / (this.gridWidth);
+    var colorDiff = 100 / (widthSpacing + heightSpacing);
+    var tempForColor = this.fromColor;
 
     for(i = 0; i < this.gridWidth - 1; i++){
         for(j = 0; j < this.gridWidth; j++){
-            fill(255);
+            fill(58, 34, 240);
+            //fill(lerpColor(tempForColor, this.toColor, colorDiff));
             var x = i * widthSpacing + widthSpacing / 2;
             var y = j * heightSpacing + heightSpacing / 2;
             var size = this.grid[i][j] / 2;
             if(size > 80) size = 0;
             ellipse(x, y, size, size);
+            //tempForColor.color_array[0] -= (this.colorDiffRed * colorDiff);
+            //tempForColor.color_array[1] -= (this.colorDiffGreen * colorDiff);
+            //tempForColor.color_array[2] -= (this.colorDiffBlue * colorDiff);
         }
     }
 }
