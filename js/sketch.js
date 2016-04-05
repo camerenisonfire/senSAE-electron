@@ -35,8 +35,8 @@ function draw() {
     vol = mic.getLevel();
     spectrum = fft.analyze();
 
-    //shapePopTheme.render();
-    circleGrid.render();
+    shapePopTheme.render();
+    //circleGrid.render();
 }
 
 function drawText() {
