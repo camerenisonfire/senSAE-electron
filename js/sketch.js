@@ -31,25 +31,6 @@ function draw() {
     spectrum = fft.analyze();
 
     themeList.render();
-
-    /*switch(themeCounter){
-        case 0:
-            circleMoverTheme.render();
-            break;
-        case 1:
-            circleGridTheme.render();
-            break;
-        case 2:
-            shapePopTheme.render();
-            break;
-        case 3:
-            freqBarTheme.render();
-            break;
-    }*/
-    //freqBarTheme.render();
-    //shapePopTheme.render();
-    //circleGridTheme.render();
-    //circleMoverTheme.render();
 }
 
 function keyPressed() {
