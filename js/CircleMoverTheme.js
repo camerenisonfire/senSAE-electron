@@ -1,5 +1,5 @@
 function CircleMoverTheme(){
-    this.numCircles = random(2, 8);
+    this.numCircles = random(2, 12);
     this.circleMovers = new Array();
     for(var i = 0; i < this.numCircles; i++){
         this.circleMovers[i] = new CircleMover();
