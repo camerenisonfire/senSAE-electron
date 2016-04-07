@@ -4,16 +4,7 @@ var vol;
 var fft;
 var spectrum;
 
-/**
-* Themes
-*/
-const NUM_OF_THEMES =  3;       //0 - 3 so 4 total themes
-var shapePopTheme;
-var circleGridTheme;
-var freqBarTheme;
-var circleMoverTheme;
-
-var themeCounter = 0;
+var themeList;
 
 function setup() {
   // uncomment this line to make the canvas the full size of the window
@@ -31,10 +22,7 @@ function setup() {
   fft.setInput(mic);        // Connect to Microphone input
   spectrum = fft.analyze(); // Initialize spectrum
 
-  shapePopTheme = new ShapePopTheme();
-  circleGridTheme = new CircleGridTheme();
-  freqBarTheme = new FreqBarTheme();
-  circleMoverTheme = new CircleMoverTheme();
+  themeList = new ThemeList();
 }
 
 function draw() {
@@ -42,7 +30,9 @@ function draw() {
     vol = mic.getLevel();
     spectrum = fft.analyze();
 
-    switch(themeCounter){
+    themeList.render();
+
+    /*switch(themeCounter){
         case 0:
             circleMoverTheme.render();
             break;
@@ -55,7 +45,7 @@ function draw() {
         case 3:
             freqBarTheme.render();
             break;
-    }
+    }*/
     //freqBarTheme.render();
     //shapePopTheme.render();
     //circleGridTheme.render();
@@ -64,13 +54,10 @@ function draw() {
 
 function keyPressed() {
   if (keyCode === LEFT_ARROW) {
-    themeCounter--;
-    if(themeCounter < 0) themeCounter = NUM_OF_THEMES;
+    themeList.updateThemeCounter(-1);
   } else if (keyCode === RIGHT_ARROW) {
-      themeCounter++;
-      if(themeCounter > NUM_OF_THEMES) themeCounter = 0;
+    themeList.updateThemeCounter(1);
   }
-  console.log(themeCounter);
 }
 
 function drawText() {
