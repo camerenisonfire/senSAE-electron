@@ -1,6 +1,9 @@
 function CircleMoverTheme(){
-    this.pos = createVector(width/2, height/2);
-    this.xOff = .01;
+    this.numCircles = random(2, 8);
+    this.circleMovers = new Array();
+    for(var i = 0; i < this.numCircles; i++){
+        this.circleMovers[i] = new CircleMover();
+    }
 }
 
 CircleMoverTheme.prototype.render = function(){
@@ -9,15 +12,9 @@ CircleMoverTheme.prototype.render = function(){
     fill(0, 5);
     rect(0, 0, width, height);
 
-    fill(255);
-    this.move();
-    var size = map(vol, 0, .4, 40, 400);
-    ellipse(this.pos.x, this.pos.y, size, size);
+    for(var i = 0; i < this.numCircles; i++){
+        this.circleMovers[i].render();
+    }
 
     pop();
-}
-
-CircleMoverTheme.prototype.move = function(){
-    this.pos.x = noise(this.xOff) * width;
-    this.xOff += vol;
 }

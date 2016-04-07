@@ -11,6 +11,7 @@ var shapePopTheme;
 var circleGridTheme;
 var freqBarTheme;
 var circleMoverTheme;
+var circleMoverTheme2;
 
 function setup() {
   // uncomment this line to make the canvas the full size of the window
@@ -32,6 +33,7 @@ function setup() {
   circleGridTheme = new CircleGridTheme();
   freqBarTheme = new FreqBarTheme();
   circleMoverTheme = new CircleMoverTheme();
+  circleMoverTheme2 = new CircleMoverTheme();
 }
 
 function draw() {
@@ -43,6 +45,7 @@ function draw() {
     //shapePopTheme.render();
     //circleGridTheme.render();
     circleMoverTheme.render();
+    circleMoverTheme2.render();
 }
 
 function drawText() {
