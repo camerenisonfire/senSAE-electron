@@ -1,4 +1,12 @@
 Working on a port of senSAE(http://www.sensae.us/) to Electron in order to use web technologies to create visualizers.
 
+You must have NodeJS(https://nodejs.org/en/) in order to install and build Electron's dependencies. Once you do:
+
+npm install 
+npm start
+
 Current status:
-One basic theme, all contained in sketch.js that draws circles and triangles based on the volume level.
+Three basic themes:
+CircleGridTheme
+FreqBarTheme
+ShapePopTheme
