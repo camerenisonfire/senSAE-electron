@@ -10,6 +10,7 @@ var spectrum;
 var shapePopTheme;
 var circleGridTheme;
 var freqBarTheme;
+var circleMoverTheme;
 
 function setup() {
   // uncomment this line to make the canvas the full size of the window
@@ -30,6 +31,7 @@ function setup() {
   shapePopTheme = new ShapePopTheme();
   circleGridTheme = new CircleGridTheme();
   freqBarTheme = new FreqBarTheme();
+  circleMoverTheme = new CircleMoverTheme();
 }
 
 function draw() {
@@ -37,9 +39,10 @@ function draw() {
     vol = mic.getLevel();
     spectrum = fft.analyze();
 
-    freqBarTheme.render();
+    //freqBarTheme.render();
     //shapePopTheme.render();
     //circleGridTheme.render();
+    circleMoverTheme.render();
 }
 
 function drawText() {
