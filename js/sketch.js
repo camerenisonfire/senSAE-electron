@@ -5,6 +5,11 @@ var fft;
 var spectrum;
 
 var themeList;
+var img;
+
+function preload(){
+    //img = loadImage("imgs/rose.png");
+}
 
 function setup() {
   // uncomment this line to make the canvas the full size of the window
@@ -29,8 +34,11 @@ function draw() {
     // Get the overall volume (between 0 and 1.0)
     vol = mic.getLevel();
     spectrum = fft.analyze();
+    background(0);
 
     themeList.render();
+
+    //image(img, 0, 0, width, height);
 }
 
 function keyPressed() {
