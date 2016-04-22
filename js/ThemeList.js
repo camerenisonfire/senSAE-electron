@@ -3,6 +3,7 @@ var NUM_OF_THEMES;
 function ThemeList(){
     //Themes
     this.list = new Array();
+    this.list.push(new TreeTheme());
     this.list.push(new FreqBarTheme());
     this.list.push(new CircleGridTheme());
     this.list.push(new ShapePopTheme());
