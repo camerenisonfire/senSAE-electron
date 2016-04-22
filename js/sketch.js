@@ -15,7 +15,7 @@ function setup() {
   // uncomment this line to make the canvas the full size of the window
   createCanvas(windowWidth, windowHeight);
   frameRate(8);
-  background(0);
+  //background(0);
 
   mic = new p5.AudioIn();   // Create an Audio input
 
@@ -34,7 +34,7 @@ function draw() {
     // Get the overall volume (between 0 and 1.0)
     vol = mic.getLevel();
     spectrum = fft.analyze();
-    background(0);
+    //background(0);
 
     themeList.render();
 

@@ -18,9 +18,9 @@ ThemeList.prototype.render = function(){
 
 ThemeList.prototype.updateThemeCounter = function(dir){
     this.themeCounter += dir;
-    if(themeCounter < 0){
+    if(this.themeCounter < 0){
         this.themeCounter = NUM_OF_THEMES - 1;
-    }else if(themeCounter >= NUM_OF_THEMES){
+    }else if(this.themeCounter >= NUM_OF_THEMES){
         this.themeCounter = 0;
     }
 }
