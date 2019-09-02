@@ -9,10 +9,10 @@ function CircleGridTheme(){
 
     this.fromColor = color(218, 165, 32);
     this.toColor = color(72, 61, 139);
-    console.log(this.fromColor.color_array[0]);
-    this.colorDiffRed = (this.fromColor.color_array[0] - this.toColor.color_array[0]);
-    this.colorDiffGreen = (this.fromColor.color_array[1] - this.toColor.color_array[1]);
-    this.colorDiffBlue = (this.fromColor.color_array[2] - this.toColor.color_array[2]);
+    console.log(this.fromColor.levels[0]);
+    this.colorDiffRed = (this.fromColor.levels[0] - this.toColor.levels[0]);
+    this.colorDiffGreen = (this.fromColor.levels[1] - this.toColor.levels[1]);
+    this.colorDiffBlue = (this.fromColor.levels[2] - this.toColor.levels[2]);
 }
 
 CircleGridTheme.prototype.render = function(){
@@ -50,9 +50,9 @@ CircleGridTheme.prototype.drawGrid = function() {
             var size = this.grid[i][j] / 2;
             if(size > 80) size = 0;
             ellipse(x, y, size, size);
-            //tempForColor.color_array[0] -= (this.colorDiffRed * colorDiff);
-            //tempForColor.color_array[1] -= (this.colorDiffGreen * colorDiff);
-            //tempForColor.color_array[2] -= (this.colorDiffBlue * colorDiff);
+            //tempForColor.levels[0] -= (this.colorDiffRed * colorDiff);
+            //tempForColor.levels[1] -= (this.colorDiffGreen * colorDiff);
+            //tempForColor.levels[2] -= (this.colorDiffBlue * colorDiff);
         }
     }
 }

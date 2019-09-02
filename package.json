@@ -1,5 +1,5 @@
 {
-  "name": "senSAE",
+  "name": "sensae-electron",
   "version": "0.0.1",
   "description": "A light-weight and generative music visualizer",
   "main": "main.js",
@@ -20,7 +20,8 @@
   "author": "camerenisonfire",
   "license": "CC0-1.0",
   "homepage": "http://www.sensae.us",
-  "devDependencies": {
-    "electron-prebuilt": "^0.36.0"
+  "dependencies": {
+    "electron": "^6.0.7",
+    "p5": "^0.9.0"
   }
 }
